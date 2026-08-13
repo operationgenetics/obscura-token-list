@@ -1,0 +1,130 @@
+[
+  {
+    "chainId": 56,
+    "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+    "name": "Wrapped BNB",
+    "symbol": "WBNB",
+    "decimals": 18,
+    "logoURI": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/smartchain/assets/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/logo.png"
+  },
+  {
+    "chainId": 56,
+    "address": "0x6985884C4392D348587B19cb9eAAf157F13271cd",
+    "name": "LayerZero",
+    "symbol": "ZRO",
+    "decimals": 18,
+    "logoURI": "https://assets.coingecko.com/coins/images/28206/standard/ftxG9_TJ_400x400.jpeg?1696527208"
+  },
+  {
+    "chainId": 56,
+    "address": "0x073690e6CE25bE816E68F32dCA3e11067c9FB5Cc",
+    "name": "Kujira",
+    "symbol": "KUJI",
+    "decimals": 6,
+    "logoURI": "https://assets.coingecko.com/coins/images/20685/standard/kuji-200x200.png"
+  },
+  {
+    "chainId": 56,
+    "address": "0x000Ae314E2A2172a039B26378814C252734f556A",
+    "name": "Aster",
+    "symbol": "ASTER",
+    "decimals": 18,
+    "logoURI": "https://coin-images.coingecko.com/coins/images/69040/large/_ASTER.png?1757326782"
+  },
+  {
+    "chainId": 56,
+    "address": "0x30117E4bC17d7B044194b76A38365C53b72F7D49",
+    "name": "ETHGas",
+    "symbol": "GWEI",
+    "decimals": 18,
+    "logoURI": "https://coin-images.coingecko.com/coins/images/71375/large/ethgas_token_200.png?1769055039"
+  },
+  {
+    "chainId": 56,
+    "address": "0x7977BF3e7e0c954D12cdcA3E013ADAf57E0B06E0",
+    "name": "OPINION",
+    "symbol": "OPN",
+    "decimals": 18,
+    "logoURI": "https://assets.coingecko.com/coins/images/102171893/thumb/Opinon.jpg?1770269253"
+  },
+  {
+    "chainId": 56,
+    "address": "0xd55C9fB62E176a8Eb6968f32958FeFDD0962727E",
+    "name": "Mind Network",
+    "symbol": "FHE",
+    "decimals": 18,
+    "logoURI": "https://coin-images.coingecko.com/coins/images/55161/large/mind.jpg?1744276359"
+  },
+  {
+    "chainId": 56,
+    "address": "0x0A73d885CdD66adF69c6D64c0609e55C527dB2BE",
+    "name": "Sidekick",
+    "symbol": "K",
+    "decimals": 18,
+    "logoURI": "https://coin-images.coingecko.com/coins/images/67966/large/kick.jpg?1754450296"
+  },
+  {
+    "chainId": 56,
+    "address": "0xf486ad071f3bEE968384D2E39e2D8aF0fCf6fd46",
+    "name": "Velo",
+    "symbol": "VELO",
+    "decimals": 18,
+    "logoURI": "https://coin-images.coingecko.com/coins/images/12538/large/Logo_200x_200.png?1696512350"
+  },
+  {
+    "chainId": 56,
+    "address": "0x8e4cbBcc33dB6c0a18561fDE1F6bA35906d4848b",
+    "name": "Mezo",
+    "symbol": "MEZO",
+    "decimals": 18,
+    "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/39727.png"
+  },
+  {
+    "chainId": 56,
+    "address": "0x868FCEd65edBF0056c4163515dD840e9f287A4c3",
+    "name": "Sign",
+    "symbol": "SIGN",
+    "decimals": 18,
+    "logoURI": "https://coin-images.coingecko.com/coins/images/55303/large/sign.jpg?1745303393"
+  },
+  {
+    "chainId": 56,
+    "address": "0x21cAef8A43163Eea865baeE23b9C2E327696A3bf",
+    "name": "Tether Gold",
+    "symbol": "XAUt0",
+    "decimals": 6,
+    "logoURI": "https://coin-images.coingecko.com/coins/images/66560/large/XAUt0_Token_Icon_Gold.png?1749747942"
+  },
+  {
+    "chainId": 56,
+    "address": "0xd9483EA7214FCfd89B4Fb8f513B544920E315A52",
+    "name": "AVA",
+    "symbol": "AVA",
+    "decimals": 18,
+    "logoURI": "https://coin-images.coingecko.com/coins/images/3014/large/AVA_Logo_160x160px_Black.png?1696503750"
+  },
+  {
+    "chainId": 56,
+    "address": "0x1F12B85aAC097E43Aa1555b2881E98a51090e9A6",
+    "name": "Genius",
+    "symbol": "GENIUS",
+    "decimals": 18,
+    "logoURI": "https://coin-images.coingecko.com/coins/images/71660/large/genius.png?1768804210"
+  },
+  {
+    "chainId": 56,
+    "address": "0x00000000eFE302BEAA2b3e6e1b18d08D69a9012a",
+    "name": "AUSD",
+    "symbol": "AUSD",
+    "decimals": 6,
+    "logoURI": "https://coin-images.coingecko.com/coins/images/39284/large/AUSD_1024px.png?1764684132"
+  },
+  {
+    "chainId": 56,
+    "address": "0x3131f6B80C26936aB03F7d9D29Eb4Ddf36AC3FB5",
+    "name": "Nesa",
+    "symbol": "NES",
+    "decimals": 18,
+    "logoURI": "https://s2.coinmarketcap.com/static/img/coins/128x128/30140.png"
+  }
+]

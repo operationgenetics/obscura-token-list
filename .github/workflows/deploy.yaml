@@ -1,0 +1,76 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # manual trigger
+  
+jobs:
+  deploy:
+    name: Deploy
+    runs-on:
+      group: npm-deploy
+    environment:
+      name: release
+    permissions:
+      id-token: write
+      contents: write
+    steps:
+      - uses: bullfrogsec/bullfrog@dcde5841b19b7ef693224207a7fdec67fce604db # v0.8.3
+
+      - name: Checkout
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Tests pass
+        run: yarn test
+
+      - name: Build list
+        run: yarn build
+
+      - name: Publish to NPM
+        run: |
+          npm install -g npm@11.6.3
+          PACKAGE_NAME=$(node -p "require('./package.json').name")
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          if npm view "${PACKAGE_NAME}@${PACKAGE_VERSION}" version 2>/dev/null; then
+            echo "Version ${PACKAGE_VERSION} already published, skipping..."
+          else
+            npm publish
+          fi
+
+      - name: Load Web 3 deploy secrets
+        uses: 1password/load-secrets-action@d1a4e73495bde3551cf63f6c048588b8f734e21d
+        with:
+          # Export loaded secrets as environment variables
+          export-env: true
+        env:
+          OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_WEB3_VAULT_TOKEN }}
+          CLOUDFLARE_TOKEN: op://web3-deploy-vault/web3-edit-token/token
+
+      - name: Pin to IPFS
+        id: upload
+        uses: anantaramdas/ipfs-pinata-deploy-action@a551f37c17ec3961df7c3ad52e1cd266dfd3d7e7
+        with:
+          pin-name: Uniswap Default Token List
+          path: "build/uniswap-default.tokenlist.json"
+          pinata-api-key: ${{ secrets.PINATA_API_KEY }}
+          pinata-secret-api-key: ${{ secrets.PINATA_API_SECRET_KEY }}
+
+      - name: Update DNS with new IPFS hash
+        env:
+          CLOUDFLARE_TOKEN: ${{ env.CLOUDFLARE_TOKEN }}
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          CLOUDFLARE_GATEWAY_ID: ${{ secrets.CLOUDFLARE_GATEWAY_ID }}
+        uses: Uniswap/cloudflare-update-web3-gateway@b3205288b1c6d0acb63fa3bd8fb686c72a9e3f3e
+        with:
+          cid: ${{ steps.upload.outputs.hash }}
